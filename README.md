@@ -699,7 +699,7 @@ Seth, S. (2021, 5 5). Basics of Algorithmic Trading: Concepts and Examples. Retr
 
 Woods, G. (2012, 12 8). Best Settings For Trading Indicators. Retrieved from Trading Setups Review: https://www.tradingsetupsreview.com/best-settings-trading-indicators/
 
-8.	License
+# 7.	License
 MIT License
 
 Copyright (c) 2022 Asrın Öztin
@@ -710,6 +710,6 @@ The above copyright notice and this permission notice shall be included in all c
 
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-9.	Disclaimer
+# 8.	Disclaimer
 The USER is responsible for any purchase and sale transactions to be made based on this study in any way. The study does NOT guarantee success in any situation and does NOT accept any kind of responsibility for any matter. All actions to be taken are in only and only responsibility of the user, NOT any of the individuals that names take place in this study.
 
