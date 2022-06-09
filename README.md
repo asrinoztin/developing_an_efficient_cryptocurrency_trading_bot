@@ -81,8 +81,7 @@ Finally, I like to especially thank to Anıl ÖZEKŞİ and Kıvanç ÖZBİLGİÇ
     5.1.3.	Spot Account Trade Endpoints
     5.2.	Code Design
     5.2.1.	Classes
-    5.2.2.	UML
-    5.3.	Developed Software
+    5.2.2.	UML    
     6.	References    
     7.	License
     8.	Disclaimer    
@@ -307,35 +306,56 @@ In this section, as explained in detail in the “Methodology” section, the da
 ### 4.3.1.	Getting Historical Data
 This section explains how the historical market data that needed to run the tests are obtained. In addition, as mentioned in section “Methodology”, how 15 different symbol data are classified as rising, falling and horizontal markets is also explained.
 
-In Figure 3-1, the functions, that are required to establish communication with the Binance platform from which the data will be drawn to be obtained, and to be organized, are coded in the python language in an object-oriented manner.
+In Figure, the functions, that are required to establish communication with the Binance platform from which the data will be drawn to be obtained, and to be organized, are coded in the python language in an object-oriented manner.
 
 ![image](https://user-images.githubusercontent.com/58219688/172857414-26c9adc9-e933-487b-8f79-f23d6c19d1b5.png)
 
 
-Figure 3-2 shows how the intended symbol data was obtained, with 5 horizontal, 5 vertical, and 5 rising. The code is written in Python programming language. To explain briefly, firstly, all symbols open for spot trading on the Binance platform were obtained and the historical values of these symbols were compared with their current values, the HODL strategy's return in the selected range was classified as bullish, bearish, or horizontal. This classification is necessary to observe the success of strategy tests by separating them from market characteristics. Finally, these symbols, whose historical data were obtained, were randomly separated to create 5 samples with the help of the random library, and the selected sample data was saved as a csv file with the naming of timeframe_symbolName. Here, in the process of classifying the markets as bullish, bearish, and horizontal, the threshold value is taken as %10 change as stated in section “Methodology” and it also can be seen in figure 3-2.
- 
+Figure shows how the intended symbol data was obtained, with 5 horizontal, 5 vertical, and 5 rising. The code is written in Python programming language. To explain briefly, firstly, all symbols open for spot trading on the Binance platform were obtained and the historical values of these symbols were compared with their current values, the HODL strategy's return in the selected range was classified as bullish, bearish, or horizontal. This classification is necessary to observe the success of strategy tests by separating them from market characteristics. Finally, these symbols, whose historical data were obtained, were randomly separated to create 5 samples with the help of the random library, and the selected sample data was saved as a csv file with the naming of timeframe_symbolName. Here, in the process of classifying the markets as bullish, bearish, and horizontal, the threshold value is taken as %10 change as stated in section “Methodology” and it also can be seen in figure 3-2.
+
+![image](https://user-images.githubusercontent.com/58219688/172857572-f5375ad0-8d4f-4e04-b6a5-de3d96ef34e2.png)
+
+
 ### 4.3.2.	Preprocessing
 In this section, the preliminary preparation steps required to work on the historical data obtained are listed, explained, and coded in Python programming language. Historical market data, which is the main dataset used throughout the chapter, was read from the file, and the data were taken glance at and visualized to have an idea. Then, the indicators were defined; were obtained from the main data set and appended to the data set. The data set was made ready by eliminating the None values that emerged with the addition of the indicators.
 
 #### 4.3.2.1.	Main Dataset
 
 ##### 4.3.2.1.1.	Import
-Figure 3-3 shows how historical market data, which is the main data set throughout the study, was added to the program flow from the recorded files. Dataframe data structures are used and dynamically named using the names of the symbol data, in order to prevent possible index confusions during operation and to facilitate processing.
+Figure shows how historical market data, which is the main data set throughout the study, was added to the program flow from the recorded files. Dataframe data structures are used and dynamically named using the names of the symbol data, in order to prevent possible index confusions during operation and to facilitate processing.
+
+![image](https://user-images.githubusercontent.com/58219688/172857625-a58d7eb7-c73f-45c3-b87d-4a41793fb283.png)
+
 
 ##### 4.3.2.1.2.	First Glance
-Initial ideas and observations about the main dataset were obtained with the piece of code shown in Figure 3-4.
+Initial ideas and observations about the main dataset were obtained with the piece of code shown in Figure.
+
+![image](https://user-images.githubusercontent.com/58219688/172857685-9e0cac23-131d-4a3a-8636-51f31d8982c0.png)
+
  
 ##### 4.3.2.1.3.	Visualization
-Figure 3-5 shows how the visualization process, which will be used many times throughout the study, is functionalized in accordance with the Dataframe data structure and the main dataset.
- 
-Figure 3-6 is the 1-hour chart visualization of the symbol data to be worked on.
+Figure shows how the visualization process, which will be used many times throughout the study, is functionalized in accordance with the Dataframe data structure and the main dataset.
 
-Figure 3-7 is the 15-minute chart visualization of the symbol data to be worked on.
+![image](https://user-images.githubusercontent.com/58219688/172857725-252bf8c9-475c-4293-8f79-2f29379e6768.png)
+
+ 
+Figure is the 1-hour chart visualization of the symbol data to be worked on.
+
+![image](https://user-images.githubusercontent.com/58219688/172857816-5b2dfe9d-7c30-45b1-92a1-1be467e61e07.png)
+
+
+Figure is the 15-minute chart visualization of the symbol data to be worked on.
+
+![image](https://user-images.githubusercontent.com/58219688/172857864-15ab044b-4c84-44f7-9f4c-1b27048c521e.png)
+
 
 #### 4.3.2.2.	Indicators
 
 ##### 4.3.2.2.1.	Defining Helper Functions
-Figure 3-8 shows the functionalization of the operations to be used in the visualization of the indicators. Depending on the type of the indicator, 2 different functions have been prepared, since the visualization process, which makes sense and is widely used, is in 2 different ways as on the graph and outside the graph.
+Figure shows the functionalization of the operations to be used in the visualization of the indicators. Depending on the type of the indicator, 2 different functions have been prepared, since the visualization process, which makes sense and is widely used, is in 2 different ways as on the graph and outside the graph.
+
+![image](https://user-images.githubusercontent.com/58219688/172857920-bed4d149-6ba2-40d9-831e-c24f91acd5ac.png)
+
 
 ##### 4.3.2.2.2.	Implementation
 In this section, the indicators were coded in python language; the indicator values were obtained by using the historical market data in the main dataset and appended as a new variable to the main dataset.
@@ -343,72 +363,147 @@ In this section, the indicators were coded in python language; the indicator val
 ###### 4.3.2.2.2.1.	Volatility
 
 ###### *4.3.2.2.2.1.1.	ADX*
-Figure 3-9 shows how the ADX indicator is defined and appended to the dataset.
+Figure shows how the ADX indicator is defined and appended to the dataset.
 
-Figure 3-10 shows the results obtained with 1-hour price data of the ADX indicator.
+![image](https://user-images.githubusercontent.com/58219688/172857951-f32e7bbc-00ca-4f89-aa85-bd949a2fa2bf.png)
+
+
+Figure shows the results obtained with 1-hour price data of the ADX indicator.
+
+![image](https://user-images.githubusercontent.com/58219688/172857989-df6abdf2-13d2-462b-9b02-422be10001d4.png)
+
  
-Figure 3-11 shows the results obtained with the 15-minute price data of the ADX indicator.
+Figure shows the results obtained with the 15-minute price data of the ADX indicator.
+
+![image](https://user-images.githubusercontent.com/58219688/172858026-ce7f0105-de14-4cee-b0a8-cc5269d842e1.png)
+
 
 ###### 4.3.2.2.2.2.	Trend
 
 ###### *4.3.2.2.2.2.1.	MACD*
-Figure 3-12 shows how the MACD indicator is defined and appended to the dataset.
+Figure shows how the MACD indicator is defined and appended to the dataset.
 
-Figure 3-13 shows the results obtained with the 1-hour price data of the MACD indicator.
+![image](https://user-images.githubusercontent.com/58219688/172858066-10cfb294-d177-4aeb-ab1b-9eb475446c29.png)
 
-Figure 3-14 shows the results obtained with the 15-minute price data of the MACD indicator.
+
+Figure shows the results obtained with the 1-hour price data of the MACD indicator.
+
+![image](https://user-images.githubusercontent.com/58219688/172858091-dfb34e7b-e7d6-4f21-98a1-7e74bf9d6b25.png)
+
+
+Figure shows the results obtained with the 15-minute price data of the MACD indicator.
+
+![image](https://user-images.githubusercontent.com/58219688/172858113-23c0c665-1104-4981-9876-9cb816eb7c6e.png)
+
 
 ###### *4.3.2.2.2.2.2.	Parabolic SAR*
-Figure 3-15 shows how the PSAR indicator is defined and appended to the dataset.
+Figure shows how the PSAR indicator is defined and appended to the dataset.
 
-Figure 3-16 shows the results obtained with the 1-hour price data of the PSAR indicator.
+![image](https://user-images.githubusercontent.com/58219688/172858177-9b38411a-00db-43af-95b7-097a6b779386.png)
 
-Figure 3-17 shows the results obtained with the 15-minute price data of the PSAR indicator.
+
+Figure shows the results obtained with the 1-hour price data of the PSAR indicator.
+
+![image](https://user-images.githubusercontent.com/58219688/172858200-640a4c27-07d7-42f4-97e5-1b1e4d1b4909.png)
+
+
+Figure shows the results obtained with the 15-minute price data of the PSAR indicator.
+
+![image](https://user-images.githubusercontent.com/58219688/172858214-156dd6a8-8664-46f4-a0d0-157388521fbe.png)
+
 
 ###### *4.3.2.2.2.2.3.	SMA*
-Figure 3-18 shows how the SMA indicator is defined and appended to the dataset.
+Figure shows how the SMA indicator is defined and appended to the dataset.
 
-Figure 3-19 shows the results obtained with the 1-hour price data of the SMA indicator.
+![image](https://user-images.githubusercontent.com/58219688/172858284-0fbb1a0e-87e4-4379-8d85-efd83738c663.png)
 
-Figure 3-20 shows the results obtained with the 15-minute price data of the SMA indicator.
+
+Figure shows the results obtained with the 1-hour price data of the SMA indicator.
+
+![image](https://user-images.githubusercontent.com/58219688/172858301-b4cb5d0b-d4dc-4238-b552-ea41ed41af0c.png)
+
+
+Figure shows the results obtained with the 15-minute price data of the SMA indicator.
+
+![image](https://user-images.githubusercontent.com/58219688/172858320-5ca08a9a-ef1d-4b06-9269-0da1b8f6ad73.png)
+
 
 ###### *4.3.2.2.2.2.4.	WMA*
-Figure 3-21 shows how the WMA indicator is defined and appended to the dataset.
+Figure shows how the WMA indicator is defined and appended to the dataset.
 
-Figure 3-22 shows the results obtained with the 1-hour price data of the WMA indicator.
+![image](https://user-images.githubusercontent.com/58219688/172858391-0fd11d51-0a6b-431f-abda-c05fcb8c056b.png)
 
-Figure 3-23 shows the results obtained with the 15-minute price data of the WMA indicator.
+
+Figure shows the results obtained with the 1-hour price data of the WMA indicator.
+
+![image](https://user-images.githubusercontent.com/58219688/172858402-8f348606-2b22-4a61-a31d-622c56701591.png)
+
+
+Figure shows the results obtained with the 15-minute price data of the WMA indicator.
+
+![image](https://user-images.githubusercontent.com/58219688/172858420-073e18d1-7cb5-47b9-ba4f-699f9010fd45.png)
+
 
 ###### *4.3.2.2.2.2.5.	EMA*
-Figure 3-24 shows how the EMA indicator is defined and appended to the dataset.
+Figure shows how the EMA indicator is defined and appended to the dataset.
 
-Figure 3-25 shows the results obtained with the 1-hour price data of the EMA indicator.
+![image](https://user-images.githubusercontent.com/58219688/172858493-52ad4c8e-07bc-4f96-b5f5-44ef42d8818e.png)
 
-Figure 3-26 shows the results obtained with the 1-minute price data of the EMA indicator.
+
+Figure shows the results obtained with the 1-hour price data of the EMA indicator.
+
+![image](https://user-images.githubusercontent.com/58219688/172858509-5f2e1508-1b51-4966-a2e2-eb64ace9df30.png)
+
+
+Figure shows the results obtained with the 1-minute price data of the EMA indicator.
+
+![image](https://user-images.githubusercontent.com/58219688/172858535-9fd52501-c1a8-4d0b-812f-f0d1ffcc7485.png)
+
 
 #### 4.3.2.3.	Get Dataset Ready to Test
 
 ##### 4.3.2.3.1.	Handling Missing Values
-None values formed after the operations were removed from the data set as shown in figure 3-27. The reason for these None values is that, for example, a 14-day moving average returns the first 13 values None because there is not enough data to calculate for the first 13 timeframes.
+None values formed after the operations were removed from the data set as shown in figure. The reason for these None values is that, for example, a 14-day moving average returns the first 13 values None because there is not enough data to calculate for the first 13 timeframes.
+
+![image](https://user-images.githubusercontent.com/58219688/172858591-bf91bcb1-e992-4341-95a2-227763353067.png)
+
 
 ##### 4.3.2.3.2.	Define Helper Functions
 
 ###### 4.3.2.3.2.1.	Heikin-Ashi
 Heikin-ashi is a chart technique that aims to reduce market noise and visualizes the trend direction better than a standard chart. It is used by investors to distinguish a trend more easily. The Heikin-Ashi technique makes it easy to detect trends, price patterns and reversal points, as it corrects price information over two periods. Candles in a traditional candlestick chart often change from top to bottom, which can make them difficult to interpret. Heikin-Ashi charts typically have more consecutive-colored candles, helping traders easily identify past price movements (Mitchell, 2021).
 
-Figure 3-28 shows how the steps required to convert historical data to Heikin-ashi data are functionalized using the main data set. Figure 3-29 shows how this function generates new values using the main dataset and appends them to the dataset as new variables.
+Figure shows how the steps required to convert historical data to Heikin-ashi data are functionalized using the main data set. The next figure shows how this function generates new values using the main dataset and appends them to the dataset as new variables.
+
+![image](https://user-images.githubusercontent.com/58219688/172858640-caefc380-7706-4920-a51b-3404fc73b36b.png)
+
+![image](https://user-images.githubusercontent.com/58219688/172858661-cabf1cb5-9fc8-46eb-a71f-941d3b573384.png)
+
+
 
 ### 4.3.3.	Experiments
 
 #### 4.3.3.1.	Defining Backtest Templates
-In order to facilitate the experiments and eliminate the margin of error, a template has been prepared that provides backtesting. The only changes on this template throughout the experiments are the indicators being used and therefore the trading conditions. Even using “filter” and “trigger” steps in a strategy is found out that being much more successful by the researches done as mentioned in the section “Strategies”, just to prove that by experiments, a strategy with no filtering function is also implemented as shown in figure 3-30. On the other hand, the main template being used, that is with filtering functionality is shown in figure 3-31.
+In order to facilitate the experiments and eliminate the margin of error, a template has been prepared that provides backtesting. The only changes on this template throughout the experiments are the indicators being used and therefore the trading conditions. Even using “filter” and “trigger” steps in a strategy is found out that being much more successful by the researches done as mentioned in the section “Strategies”, just to prove that by experiments, a strategy with no filtering function is also implemented as shown in figure. On the other hand, the main template being used, that is with filtering functionality is shown in the next figure.
 
 Success metrics were determined as total profit, total HODL return, total number of losing trades, total number of profitable trades and total number of winning trades / total number of losing trades ratio.
+
+![image](https://user-images.githubusercontent.com/58219688/172858743-69c8aada-e4e8-44d6-83ab-1c102125b2ca.png)
+
+![image](https://user-images.githubusercontent.com/58219688/172858813-0417b8e1-90c4-4f3f-85c0-bac61da7788b.png)
+
+
  
 #### 4.3.3.2.	HODL Strategy Expected Returns
 As mentioned in the “Introduction” section, the aim of this study is to go beyond the HODL strategy, which is holding what is owned. In order to make comparisons, HODL performances of the symbols in the data sets on which transactions will be performed in the selected time interval are shown.
 
-Figure 3-32 shows how the HODL return is calculated over the 15-minute data that will be traded. Figure 3-33 shows the results calculated as a result of this process. It is also shown that the market classifications made as 5 rising, 5 bullish, and 5 bearish in figure 3-33.
+Figure shows how the HODL return is calculated over the 15-minute data that will be traded. Figure shows the results calculated as a result of this process. It is also shown that the market classifications made as 5 rising, 5 bullish, and 5 bearish in figure.
+
+![image](https://user-images.githubusercontent.com/58219688/172858845-3724261e-566c-459a-aa3f-ada598317360.png)
+
+![image](https://user-images.githubusercontent.com/58219688/172858859-92ab7fab-180b-4dac-ac73-62d4beaeef66.png)
+
+
 
 #### 4.3.3.3.	Confirmations
 In this section, the accuracy of the information about the design of strategies, obtained from the researches mentioned in the study, has been tested with the selected data sets and their accuracy has been proven.
@@ -416,20 +511,38 @@ In this section, the accuracy of the information about the design of strategies,
 ##### 4.3.3.3.1.	Effect of Using a Filter
 As can be seen in Figure 3-34, an additional filtering step used in addition to the buy-sell stage increased the expected overall earnings, reduced the number of trades, and increased the profitable trade rate. As mentioned earlier in the “Strategies” section, the application of filters has been shown to be beneficial.
 
+![image](https://user-images.githubusercontent.com/58219688/172858959-13e5cb98-7290-425f-8005-3386f6803804.png)
+
+
 ##### 4.3.3.3.2.	Effect of Using More Than One Indicators Belonging to The Same Class
 As seen in Figure 3-35, an additional indicator belonging to the same class, used in the trading phase, decreased the expected total earnings, the number of trading transactions and the profitable transaction rate. But these are very minor changes. As mentioned earlier in the section “How to Choose Indicators”, it has been shown that indicators in the same class confirm each other, but do not cause major changes. The reason for the decrease in the earnings and the number of transactions is due to the longer delays as the approval of both indicators is awaited.
+
+![image](https://user-images.githubusercontent.com/58219688/172858973-b1165b53-f04d-4e59-991a-8dac6f6d4a1b.png)
+
 
 ##### 4.3.3.3.3.	Effect of using moving averages to confirm trend indicators
 As seen in Figure 3-36, an additional moving average used in the filtering stage increased the expected total earnings and decreased the number of buy-sell transactions; increased the rate of profitable transactions.
 
+![image](https://user-images.githubusercontent.com/58219688/172858987-72bbc131-f148-4476-be5a-8ae280f4451b.png)
+
+
 ##### 4.3.3.3.4.	Effect of using volatility indicators to confirm trend indicators
 As seen in Figure 3-37, an additional ADX used in the filtering stage reduced the expected total earnings and the number of trades; slightly increased the rate of profitable transactions. The use of the ADX indicator as an additional indicator has eliminated the sideways markets that are the weakness of trend indicators, thus reducing the number of trades and increasing the accuracy; but as a more defensive strategy, it yielded less profit with less risk. This is due to the fact that the ADX indicator is a lagging indicator and it is below the value of 25 because it has a return in trend returns, that is, in places where gains can be made by taking early positions, and therefore it filters the signals. 
+
+![image](https://user-images.githubusercontent.com/58219688/172859005-5517ba55-7a9f-4f0d-a250-ecf423b01342.png)
+
 
 ##### 4.3.3.3.5.	Effect of using moving averages while triggering
 As can be seen in Figure 3-38, an additional moving average used in the trading phase reduced the expected total earnings, the number of trading transactions and the rate of profitable transactions, albeit slightly. The reason for this is that these delayed working indicators are working as confirmatory with each other and at the same time they are blocking each other. As a result of less purchase conditions, less profit has been obtained, while the loss-making situations have decreased, the gain-making situations have also decreased.
 
+![image](https://user-images.githubusercontent.com/58219688/172859034-4a31d122-36f9-4836-9764-27e75e08d523.png)
+
+
 ##### 4.3.3.3.6.	Effect of using volatility indicators while triggering
 As seen in Figure 3-39, an additional ADX used in the trading phase has reduced the expected total earnings and the number of trading transactions; reduced the rate of profitable transactions. This is because the ADX indicator is a lagging indicator, thus it eliminates potential buy trades at the low levels of trend reversals, and avoiding profitable buy trades.
+
+![image](https://user-images.githubusercontent.com/58219688/172859056-3a93f8ca-d8e2-4477-a02a-01ef856c1692.png)
+
 
 #### 4.3.3.4.	Strategy combinations chosen
 In line with the experiments, it was decided to use the filtering section, and to use trend indicators and an additional moving average in this filtering process; In the triggering part, it has been decided to use a single trend indicator, including moving average types. All possible combinations have been tested in order to go into more detail. Volatility indicators, which were shown to prevent the weaknesses of trend indicators throughout the study, were not used in the rest of the study as they constitute a defensive investment strategy and reduce the risk as well as the profit. It should be underlined that this is a preference, it may vary depending on what kind of strategy that investors want to follow, and the risk/reward ratio they aim for.
@@ -437,95 +550,188 @@ In line with the experiments, it was decided to use the filtering section, and t
 ##### 4.3.3.4.1.	Eliminate via SMA + PSAR & Determine via PSAR
 Figure 3-40 shows the test results of a strategy that uses SMA and PSAR to filter the markets and PSAR as a trigger.
 
+![image](https://user-images.githubusercontent.com/58219688/172859087-e66b99a1-ad94-4b00-b141-12c0a62b4817.png)
+
+
 ##### 4.3.3.4.2.	Eliminate via SMA + MACD & Determine via PSAR
 Figure 3-41 shows the test results of a strategy that uses SMA and MACD to filter the markets and PSAR as a trigger.
+
+![image](https://user-images.githubusercontent.com/58219688/172859105-8799dda9-b63e-47c2-8c3b-835bb6c3b9ef.png)
+
 
 ##### 4.3.3.4.3.	Eliminate via WMA + PSAR & Determine via PSAR
 Figure 3-42 shows the test results of a strategy that uses SMA and PSAR to filter the markets and PSAR as a trigger.
 
+![image](https://user-images.githubusercontent.com/58219688/172859126-32420d99-41ed-4c28-8e94-60758c178cb9.png)
+
+
 ##### 4.3.3.4.4.	Eliminate via WMA + MACD & Determine via PSAR
 Figure 3-43 shows the test results of a strategy that uses WMA and MACD to filter the markets and PSAR as a trigger.
+
+![image](https://user-images.githubusercontent.com/58219688/172859146-2f1f74d7-7002-4b31-b6d7-0dae5640ddd3.png)
+
 
 ##### 4.3.3.4.5.	Eliminate via EMA + PSAR & Determine via PSAR
 Figure 3-44 shows the test results of a strategy that uses EMA and PSAR to filter the markets and PSAR as a trigger.
 
+![image](https://user-images.githubusercontent.com/58219688/172859155-b3b5606d-ca37-4c78-9044-e887874fb0ee.png)
+
+
 ##### 4.3.3.4.6.	Eliminate via EMA + MACD & Determine via PSAR
 Figure 3-45 shows the test results of a strategy that uses EMA and MACD to filter the markets and PSAR as a trigger.
+
+![image](https://user-images.githubusercontent.com/58219688/172859174-6f1430f1-2682-4bbd-86cc-ba9a57ae13bd.png)
+
 
 ##### 4.3.3.4.7.	Eliminate via SMA + PSAR & Determine via MACD
 Figure 3-46 shows the test results of a strategy that uses SMA and PSAR to filter the markets and MACD as a trigger.
 
+![image](https://user-images.githubusercontent.com/58219688/172859196-acd4e288-52c4-4262-a66a-ea9dccf0b97a.png)
+
+
 ##### 4.3.3.4.8.	Eliminate via SMA + MACD & Determine via MACD
 Figure 3-47 shows the test results of a strategy that uses SMA and MACD to filter the markets and MACD as a trigger.
+
+![image](https://user-images.githubusercontent.com/58219688/172859230-0ce1691e-ac6e-4c91-b425-c27eb3d90efe.png)
+
 
 ##### 4.3.3.4.9.	Eliminate via WMA + PSAR & Determine via MACD
 Figure 3-48 shows the test results of a strategy that uses WMA and PSAR to filter the markets and MACD as a trigger.
 
+![image](https://user-images.githubusercontent.com/58219688/172859254-4ebd4255-106b-4a01-beeb-b03d380226b8.png)
+
+
 ##### 4.3.3.4.10.	Eliminate via WMA + MACD & Determine via MACD
 Figure 3-49 shows the test results of a strategy that uses WMA and MACD to filter the markets and MACD as a trigger.
+
+![image](https://user-images.githubusercontent.com/58219688/172859280-181978ac-2ca9-4be7-806d-471cdef36a37.png)
+
 
 ##### 4.3.3.4.11.	Eliminate via EMA + PSAR & Determine via MACD
 Figure 3-50 shows the test results of a strategy that uses EMA and PSAR to filter the markets and MACD as a trigger.
 
+![image](https://user-images.githubusercontent.com/58219688/172859291-d8f3bbef-89aa-47d6-ba3a-4630ac3052d6.png)
+
+
 ##### 4.3.3.4.12.	Eliminate via EMA + MACD & Determine via MACD
 Figure 3-51 shows the test results of a strategy that uses EMA and MACD to filter the markets and MACD as a trigger.
+
+![image](https://user-images.githubusercontent.com/58219688/172859306-9dd0cc47-043d-4e59-833d-059378a5e206.png)
+
 
 ##### 4.3.3.4.13.	Eliminate via SMA + PSAR & Determine via SMA
 Figure 3-52 shows the test results of a strategy that uses SMA and PSAR to filter the markets and SMA as a trigger.
 
+![image](https://user-images.githubusercontent.com/58219688/172859329-03ffbbd7-79d5-4cf8-926d-f6d9a043e4af.png)
+
+
 ##### 4.3.3.4.14.	Eliminate via SMA + MACD & Determine via SMA
 Figure 3-53 shows the test results of a strategy that uses SMA and MACD to filter the markets and SMA as a trigger.
+
+![image](https://user-images.githubusercontent.com/58219688/172859359-e008f8bf-561a-4250-83ff-b6fce6cee2a7.png)
+
 
 ##### 4.3.3.4.15.	Eliminate via WMA + PSAR & Determine via SMA
 Figure 3-54 shows the test results of a strategy that uses WMA and PSAR to filter the markets and SMA as a trigger.
 
+![image](https://user-images.githubusercontent.com/58219688/172859375-3a03ffe3-6437-4bc0-84ab-776c11be79ea.png)
+
+
 ##### 4.3.3.4.16.	Eliminate via WMA + MACD & Determine via SMA
 Figure 3-55 shows the test results of a strategy that uses WMA and MACD to filter the markets and SMA as a trigger.
+
+![image](https://user-images.githubusercontent.com/58219688/172859414-3eda3640-0d98-4435-a282-0f2c4b6080f9.png)
+
 
 ##### 4.3.3.4.17.	Eliminate via EMA + PSAR & Determine via SMA
 Figure 3-56 shows the test results of a strategy that uses EMA and PSAR to filter the markets and SMA as a trigger.
 
+![image](https://user-images.githubusercontent.com/58219688/172859440-e4011ab0-8d63-4c72-83ea-856e991de3bc.png)
+
+
 ##### 4.3.3.4.18.	Eliminate via EMA + MACD & Determine via SMA
 Figure 3-57 shows the test results of a strategy that uses EMA and MACD to filter the markets and SMA as a trigger.
+
+![image](https://user-images.githubusercontent.com/58219688/172859472-a7f0b9de-1c61-4671-bb8e-c271e16cbd87.png)
+
 
 ##### 4.3.3.4.19.	Eliminate via SMA + PSAR & Determine via WMA
 Figure 3-58 shows the test results of a strategy that uses SMA and PSAR to filter the markets and WMA as a trigger.
 
+![image](https://user-images.githubusercontent.com/58219688/172859495-a4058967-f95a-4bcb-a6d6-9c1d05e5365e.png)
+
+
 ##### 4.3.3.4.20.	Eliminate via SMA + MACD & Determine via WMA
 Figure 3-59 shows the test results of a strategy that uses SMA and MACD to filter the markets and WMA as a trigger.
+
+![image](https://user-images.githubusercontent.com/58219688/172859531-4639dc7f-56af-4ece-bd7a-6987e49b7eb1.png)
+
 
 ##### 4.3.3.4.21.	Eliminate via WMA + PSAR & Determine via WMA
 Figure 3-60 shows the test results of a strategy that uses WMA and PSAR to filter the markets and WMA as a trigger.
 
+![image](https://user-images.githubusercontent.com/58219688/172859554-a14cdcd3-1b47-4275-8107-ac708d966591.png)
+
+
 ##### 4.3.3.4.22.	Eliminate via WMA + MACD & Determine via WMA
 Figure 3-61 shows the test results of a strategy that uses WMA and MACD to filter the markets and WMA as a trigger.
+
+![image](https://user-images.githubusercontent.com/58219688/172859571-2d075705-b4c4-4f8e-b332-de8f6336281a.png)
+
 
 ##### 4.3.3.4.23.	Eliminate via EMA + PSAR & Determine via WMA
 Figure 3-62 shows the test results of a strategy that uses EMA and PSAR to filter the markets and WMA as a trigger.
 
+![image](https://user-images.githubusercontent.com/58219688/172859580-9fa067a6-db1a-4e86-b026-59ae8d282d49.png)
+
+
 ##### 4.3.3.4.24.	Eliminate via EMA + MACD & Determine via WMA
 Figure 3-63 shows the test results of a strategy that uses EMA and MACD to filter the markets and WMA as a trigger.
+
+![image](https://user-images.githubusercontent.com/58219688/172859598-2044aba5-112f-43f6-b0d2-74ec71d0cf9a.png)
+
 
 ##### 4.3.3.4.25.	Eliminate via SMA + PSAR & Determine via EMA
 Figure 3-64 shows the test results of a strategy that uses SMA and PSAR to filter the markets and EMA as a trigger.
 
+![image](https://user-images.githubusercontent.com/58219688/172859614-624d8d81-e95f-4cfa-bae6-d622661e56a5.png)
+
+
 ##### 4.3.3.4.26.	Eliminate via SMA + MACD & Determine via EMA
 Figure 3-65 shows the test results of a strategy that uses SMA and MACD to filter the markets and EMA as a trigger.
+
+![image](https://user-images.githubusercontent.com/58219688/172859637-15826d96-8d73-4741-af07-d05ae5818cef.png)
+
 
 ##### 4.3.3.4.27.	Eliminate via WMA + PSAR & Determine via EMA
 Figure 3-66 shows the test results of a strategy that uses WMA and PSAR to filter the markets and EMA as a trigger.
 
+![image](https://user-images.githubusercontent.com/58219688/172859661-6c6edb30-8242-46a6-94c9-3329b49c4737.png)
+
+
 ##### 4.3.3.4.28.	Eliminate via WMA + MACD & determine via EMA
 Figure 3-67 shows the test results of a strategy that uses WMA and MACD to filter the markets and EMA as a trigger.
+
+![image](https://user-images.githubusercontent.com/58219688/172859693-45f582d5-2753-4865-b65c-8fd89778a447.png)
+
 
 ##### 4.3.3.4.29.	Eliminate via EMA + PSAR & Determine via EMA
 Figure 3-68 shows the test results of a strategy that uses EMA and PSAR to filter the markets and EMA as a trigger.
 
+![image](https://user-images.githubusercontent.com/58219688/172859720-4abdd6df-0822-43e7-832a-79bfdd133e14.png)
+
+
 ##### 4.3.3.4.30.	Eliminate via EMA + MACD & Determine via EMA
 Figure 3-69 shows the test results of a strategy that uses EMA and MACD to filter the markets and EMA as a trigger.
 
+![image](https://user-images.githubusercontent.com/58219688/172859753-6e62ec09-21e4-41a4-b055-391acf45bea1.png)
+
+
 ### 4.3.4.	Findings
 In line with the experiments performed, it is decided that to use WMA and PSAR indicators in the filtering process; And MACD indicator in the triggering process. The reason for is that, as seen in the results, it has yielded results as the most profitable strategy relatively. It should be underlined that it is a choice and “the best” strategy is relative to the needs and aims of the investor. For example, a strategy with a less profit but higher the number of profitable transactions / the number of losing transactions ratio can be selected as well as a more defensive strategy. The test results of the chosen strategy are again shown in Figure 3-70.
+
+![image](https://user-images.githubusercontent.com/58219688/172859770-bd99880f-95fc-4dd8-b796-1c9aac45e2b4.png)
+
 
 # 5.	Source Code 
 As mentioned as the aim of this study in the “Introduction” section, a cryptocurrency trading bot is developed in the scope of this study. While all the information given so far are about developing a successful strategy, the parts from now are about applying the strategy in the markets. The subjects included in this section are relatively, the used part of the document of python-binance library, the design of the program developed, and the program itself.
@@ -671,8 +877,6 @@ In this section, object-oriented program design choices are explained about the 
 ### 5.2.2.	UML
 The relationship between the classes, the methods and attributes being used in these classes of the designed source code is as shown in Figure 4-1.
 
-## 5.3.	 Developed Software
-The software developed as a result of this study is shown in pieces of the source code. Since the figures’ order is not important, and since they are cut in pieces just to be seen in a better way in this document, there is no extra information given about the figures throughout the section.
 
 # 6.	References
 Binance Api. (2022). Retrieved from python-binance: https://python-binance.readthedocs.io/en/latest/binance.html#
