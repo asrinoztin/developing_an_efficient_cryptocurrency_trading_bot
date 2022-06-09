@@ -208,7 +208,9 @@ There are basically 3 types of moving averages, and they differ from each other 
 ##### 2.2.1.1.1.	Simple Moving Average (SMA)
 The Simple Moving Average (SMA) indicator gives the average of the selected price data over the selected period. While doing so, it accepts the coefficient of all times, that is, its importance in this case, the same. Because of the fact that, the longer the period during which it is considered to invest means that there is the higher probability of a change being occurred in the market respectively to the first day, there is a greater possibility of giving false signals. Therefore, it should not be preferred especially in the long-term investing. (Özekşi, Hareketli Ortalamalar, 2013).
 
-Figure 2-1 shows the application of the Simple Moving Average indicator on real data via the Tradingview platform as an example. Since it is a visualization just to give an example of the indicator being applied, symbol data and timeframe chosen is out of context, thus not mentioned additionally.
+Figure shows the application of the Simple Moving Average indicator on real data via the Tradingview platform as an example. Since it is a visualization just to give an example of the indicator being applied, symbol data and timeframe chosen is out of context, thus not mentioned additionally.
+
+![image](https://user-images.githubusercontent.com/58219688/172856813-287f2259-9fb1-460d-be23-8e3ee3de73c8.png)
 
 ##### 2.2.1.1.2.	Weighted Moving Average (WMA)
 Ignoring recent changes in the SMA indicator can be corrected using the Weighted Moving Average (WMA) indicator. As it gets closer to the present day, the coefficient of price data, that is, its importance, increases. It gives faster signals than the SMA indicator, but it is also relatively more likely to produce false signals due to the speed increase (Özekşi, Hareketli Ortalamalar, 2013).
