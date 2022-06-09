@@ -210,7 +210,7 @@ The Simple Moving Average (SMA) indicator gives the average of the selected pric
 
 Figure shows the application of the Simple Moving Average indicator on real data via the Tradingview platform as an example. Since it is a visualization just to give an example of the indicator being applied, symbol data and timeframe chosen is out of context, thus not mentioned additionally.
 
-![image](https://user-images.githubusercontent.com/58219688/172856813-287f2259-9fb1-460d-be23-8e3ee3de73c8.png)
+	![image](https://user-images.githubusercontent.com/58219688/172856813-287f2259-9fb1-460d-be23-8e3ee3de73c8.png)
 
 ##### 2.2.1.1.2.	Weighted Moving Average (WMA)
 Ignoring recent changes in the SMA indicator can be corrected using the Weighted Moving Average (WMA) indicator. As it gets closer to the present day, the coefficient of price data, that is, its importance, increases. It gives faster signals than the SMA indicator, but it is also relatively more likely to produce false signals due to the speed increase (Özekşi, Hareketli Ortalamalar, 2013).
