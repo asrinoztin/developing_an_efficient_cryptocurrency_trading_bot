@@ -210,24 +210,33 @@ The Simple Moving Average (SMA) indicator gives the average of the selected pric
 
 Figure shows the application of the Simple Moving Average indicator on real data via the Tradingview platform as an example. Since it is a visualization just to give an example of the indicator being applied, symbol data and timeframe chosen is out of context, thus not mentioned additionally.
 
-	![image](https://user-images.githubusercontent.com/58219688/172856813-287f2259-9fb1-460d-be23-8e3ee3de73c8.png)
+![image](https://user-images.githubusercontent.com/58219688/172856813-287f2259-9fb1-460d-be23-8e3ee3de73c8.png)
 
 ##### 2.2.1.1.2.	Weighted Moving Average (WMA)
 Ignoring recent changes in the SMA indicator can be corrected using the Weighted Moving Average (WMA) indicator. As it gets closer to the present day, the coefficient of price data, that is, its importance, increases. It gives faster signals than the SMA indicator, but it is also relatively more likely to produce false signals due to the speed increase (Özekşi, Hareketli Ortalamalar, 2013).
 
-Figure 2-2 shows the application of the Weighted Moving Average indicator on real data via the Tradingview platform as an example. Since it is a visualization just to give an example of the indicator being applied, symbol data and timeframe chosen is out of context, thus not mentioned additionally.
+Figure shows the application of the Weighted Moving Average indicator on real data via the Tradingview platform as an example. Since it is a visualization just to give an example of the indicator being applied, symbol data and timeframe chosen is out of context, thus not mentioned additionally.
+
+![image](https://user-images.githubusercontent.com/58219688/172857104-120aa048-7167-435d-aa44-7589bd209c5e.png)
+
 
 ##### 2.2.1.1.3.	Exponential Moving Average (EMA)
 The importance of the last days neglected in SMA indicator is eliminated by using WMA indicator; but this time, the first days were almost completely ignored. These omissions are corrected by determining a general coefficient in the Exponential Moving Average (EMA). Period and coefficient information is required for its calculation. While the coefficient is always set to 2, the period can be changed depending on the situation (Özekşi, Hareketli Ortalamalar, 2013).
 
-Figure 2-3 shows the application of the Exponential Moving Average indicator on real data via the Tradingview platform as an example. Since it is a visualization just to give an example of the indicator being applied, symbol data and timeframe chosen is out of context, thus not mentioned additionally.
+Figure shows the application of the Exponential Moving Average indicator on real data via the Tradingview platform as an example. Since it is a visualization just to give an example of the indicator being applied, symbol data and timeframe chosen is out of context, thus not mentioned additionally.
+
+![image](https://user-images.githubusercontent.com/58219688/172857145-7621f069-99bd-4f18-aef7-8330f0a5621f.png)
+
 
 #### 2.2.1.2.	 Parabolic Stop and Reversal (PSAR)
 The Parabolic Stop and Reversal (PSAR) indicator checks whether there is a bullish continuum or a bearish continuum by looking at the change from the previous value. As soon as the indicator appeared below the price chart intersects with the price chart, it moves up, changes area and also should be interpreted as a sell signal. Likewise, when the indicator above the price chart intersects with the price chart, it goes down, changes area and should be interpreted as a buy signal. The PSAR indicator that is on default settings uses step variable as 0.2 and max step variable also as 0.2 (Özekşi, Parabolic Sar, 2013).
 
 Because of the mathematical background difference in the up and down trend in its calculation, its usage within a solid trend is more consistent. While the indicator gives accurate results in a trending environment, it gives false signals in horizontal markets, that is, in markets where trends are not clear. It is effective to use together with indicators such as MA in eliminating this deficiency (Murphy, 2022).
 
-Figure 2-4 shows the application of the Parabolic Stop and Reversal indicator on real data via the Tradingview platform as an example. Since it is a visualization just to give an example of the indicator being applied, symbol data and timeframe chosen is out of context, thus not mentioned additionally.
+Figure shows the application of the Parabolic Stop and Reversal indicator on real data via the Tradingview platform as an example. Since it is a visualization just to give an example of the indicator being applied, symbol data and timeframe chosen is out of context, thus not mentioned additionally.
+
+![image](https://user-images.githubusercontent.com/58219688/172857176-40231c77-1bcd-453f-b196-85de0e72f73c.png)
+
 
 #### 2.2.1.3.	Moving Average Convergence Divergence (MACD)
 Moving Average Convergence Divergence (MACD) is an indicator that shows in which direction the price movements tend to go. MACD visualizes this by calculating 2 different time-period EMAs and their differences from each other (Özekşi, Macd, 2013).
@@ -238,7 +247,10 @@ It should be interpreted as a buy signal when the MACD indicator crosses its own
 
 As with all other indicators, the default periods may not match with the stock being analyzed, and as with all other indicators, the surest way is to try and find the right period specific to the stock. Otherwise, it will either provide early signals and overbought; or the expected gain cannot be obtained by providing late signals (Özekşi, Macd, 2013).
 
-Figure 2-5 shows the application of the Moving Average Convergence Divergence indicator on real data via the Tradingview platform as an example. Since it is a visualization just to give an example of the indicator being applied, symbol data and timeframe chosen is out of context, thus not mentioned additionally.
+Figure shows the application of the Moving Average Convergence Divergence indicator on real data via the Tradingview platform as an example. Since it is a visualization just to give an example of the indicator being applied, symbol data and timeframe chosen is out of context, thus not mentioned additionally.
+
+![image](https://user-images.githubusercontent.com/58219688/172857239-f240224b-cd90-4fb5-aa0b-93286eeed575.png)
+
 
 ### 2.2.2.	Volatility
 
@@ -249,7 +261,10 @@ It takes values between 0 and 100. The point to be underlined in the ADX indicat
 
 It is commonly interpreted that values above 25 indicate the presence of a partially high-power trend, and it is known that the success of trend indicators decreases for ADX values below 25. Low ADX is also a sign of accumulation or dispersal phases (Schaap, 2022).
 
-Figure 2-6 shows the application of the Average Directional Index indicator on real data via the Tradingview platform as an example. Since it is a visualization just to give an example of the indicator being applied, symbol data and timeframe chosen is out of context, thus not mentioned additionally.
+Figure shows the application of the Average Directional Index indicator on real data via the Tradingview platform as an example. Since it is a visualization just to give an example of the indicator being applied, symbol data and timeframe chosen is out of context, thus not mentioned additionally.
+
+![image](https://user-images.githubusercontent.com/58219688/172857277-f4756a81-afb5-406a-8d20-ab89aaab5a52.png)
+
 
 # 3.	Methodology
 This study can be examined in two stages as developing an effective strategy and developing the source code. Throughout the study, the Python programming language was used due to its effective use on datasets and its large library. During the study, all broker transactions such as trading, and data acquisition were carried out using the Binance platform through the python-binance library. The python ta library, which uses the pandas library in the background, is used to implement the indicators. The ipynb file format was used during the stages of obtaining the data and testing the strategies. The reason for this is ease of use.
@@ -293,6 +308,9 @@ In this section, as explained in detail in the “Methodology” section, the da
 This section explains how the historical market data that needed to run the tests are obtained. In addition, as mentioned in section “Methodology”, how 15 different symbol data are classified as rising, falling and horizontal markets is also explained.
 
 In Figure 3-1, the functions, that are required to establish communication with the Binance platform from which the data will be drawn to be obtained, and to be organized, are coded in the python language in an object-oriented manner.
+
+![image](https://user-images.githubusercontent.com/58219688/172857414-26c9adc9-e933-487b-8f79-f23d6c19d1b5.png)
+
 
 Figure 3-2 shows how the intended symbol data was obtained, with 5 horizontal, 5 vertical, and 5 rising. The code is written in Python programming language. To explain briefly, firstly, all symbols open for spot trading on the Binance platform were obtained and the historical values of these symbols were compared with their current values, the HODL strategy's return in the selected range was classified as bullish, bearish, or horizontal. This classification is necessary to observe the success of strategy tests by separating them from market characteristics. Finally, these symbols, whose historical data were obtained, were randomly separated to create 5 samples with the help of the random library, and the selected sample data was saved as a csv file with the naming of timeframe_symbolName. Here, in the process of classifying the markets as bullish, bearish, and horizontal, the threshold value is taken as %10 change as stated in section “Methodology” and it also can be seen in figure 3-2.
  
