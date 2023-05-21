@@ -1,3 +1,7 @@
+    https://www.youtube.com/watch?v=_XTBGiMaVEg
+    
+    ***
+    
     DEVELOPING AN EFFICIENT CRYPTOCURRENCY TRADING BOT
     Asrın ÖZTİN - BİLGİSAYAR MÜHENDİSLİĞİ - LİSANS TEZİ - Haziran 2022
     Asrın ÖZTİN - COMPUTER ENGINEERING - LICENSE THESIS - Haziran 2022
